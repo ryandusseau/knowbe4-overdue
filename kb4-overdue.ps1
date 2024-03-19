@@ -3,8 +3,6 @@
 # 1) For each overdue user, add them to an AAD group which can restrict their online account access via conditional access policy.
 # 2) If a user is no longer overdue, then remove them from the AAD group.
 
-# This runbook is published as an Azure Automation runbook and is recurringly executed via a scheduled Azure Logic App (ex. every 15 minutes)
-
 # TO ADD MORE KB4 GROUPS TO THIS SCRIPT:
 # 1) In KnowBe4, create a copy of an existing 'Overdue' group. Modify the name and smart criteria to fit your latest training campaign.
 # 2) Locate the group ID in the URL.
@@ -12,8 +10,8 @@
 
 
 $KB4groups = <SMART GROUPS HERE, separate multiple groups by commma>
-# 123456 = Example group
-# 789123 = Example group 2
+# 10001 = Example group
+# 10002 = Example group 2
 
 
 # --- KNOWBE4 CONNECTION ---
