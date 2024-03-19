@@ -1,8 +1,8 @@
 # KnowBe4-Overdue
 
-Users who are overdue on their training may be subjected to account restrictions. Rather than manually or bulk disabling access in AD/AAD, an effective way to manage this is using conditional access policies in Entra / Azure Active Directory.
+Users who are overdue on their training may be subjected to account restrictions. Rather than manually or bulk disabling access in AD/AAD, conditional access policies are an effective way to limit access until they get their training done.
 
-This is an automation job to handle adding and removing users from these restrictions based on their current KnowBe4 training status. The ps1 file is set as an Azure Automation runbook which will frequently connect to the KnowBe4 API and check whether the user is part of any in-scope smart groups (designed to detect 'overdue' training status). If they are a member of any, then the runbook will connect to Entra/AAD and add the user to a group which will be assigned to a conditional access policy that blocks most access until training can be completed. Once the user is no longer a member of any overdue KB4 groups, then they will be automatically removed from the group, lifting their access restriction.
+This is an automation job to handle adding and removing users from the restriction based on their current KnowBe4 training status. The ps1 file will be set as an Azure Automation runbook that frequently connects to the KnowBe4 API and checks whether the user is part of any 'overdue' smart groups. If they are a member of any, then the runbook will connect to Entra/AAD and add the user to an Entra/AAD group assigned to a conditional access policy that blocks most access except for KnowBe4. Once the user completes their training, the smart group will update quickly and the next runbook will handle removing them from the Entra group/conditional access policy.
 
 ## Requirements
 
