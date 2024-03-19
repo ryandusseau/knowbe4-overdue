@@ -12,10 +12,10 @@ This is an automation job to handle adding and removing users from these restric
 4. Azure Automation account
 5. Azure Logic App (optional)
 
+A basic understanding of each of the Requirements is recommended, as well as basic understanding of Powershell.
+
 ## Disclaimer
 The materials here are provided as-is and come with no warranty or guarantees for any environment. You should review all materials carefully before use to determine whether it is appropriate for your environment. Where necessary, use a test environment or set policies in Report mode to monitor their effect. Exercise caution with lockout policies by creating breakglass/exemption conditions.
-
-A basic understanding of each of the Requirements is recommended, as well as basic understanding of Powershell.
 
 ## Set up
 
@@ -31,11 +31,11 @@ A basic understanding of each of the Requirements is recommended, as well as bas
     2. Paste the Entra group into the **$AADgroup** variable
 5. To **schedule** your runbook, you can use the provided schedule in Automation Accounts. However, the most frequent option available is 1 hour, which may be too slow for releasing users once they complete their training. Therefore, you can optionally use an  **Azure Logic App** to execute your runbook on a more frequent schedule, such as every 15 minutes:
     1. Create an Azure Logic App.
-    2. **Identity**: Enable the System assigned managed identity, and provide it permission 'Automation Job Operator' so that it will be able to execute your Automation Account runbook.
+    2. **Identity**: Enable the System Assigned Managed Identity. Provide it permission 'Automation Job Operator' where your Automation Account is located, so that it will be able to execute the runbook.
     3. **Logic app designer**:
         1. **Trigger**: Recurrence; frequency is up to you
-        2. **Action**: Create job > Select your Automation Account runbook
-    4. Recommended: Create an **Alert** on your logic app to detect run failures.
+        2. **Action**: Create job: Select your Automation Account runbook in Azure. For credential, select the Managed Identity of this logic app.
+    4. **Alerts** (optional): Create an Alert Rule to detect logic app run failures, for example sending you an email or SMS.
   
 ## Adding additional groups
 To add more training campaigns over time, simply create another KnowBe4 smart group and add the ID into the **$KB4groups** variable of the ps1 file (comma separated).
