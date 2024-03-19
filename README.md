@@ -15,6 +15,8 @@ This is an automation job to handle adding and removing users from these restric
 ## Disclaimer
 The materials here are provided as-is and come with no warranty or guarantees for any environment. You should review all materials carefully before use to determine whether it is appropriate for your environment. Where necessary, use a test environment or set policies in Report mode to monitor their effect. Exercise caution with lockout policies by creating breakglass/exemption conditions.
 
+A basic understanding of each of the Requirements is recommended, as well as basic understanding of Powershell.
+
 ## Set up
 
 1. In **KnowBe4**, create a smart group that will identify users who are overdue on a particular training campaign. Take note of the group ID (in the URL). *NOTE: You will be able to add as many groups into the ps1 script as needed, for example if you create a unique overdue group per training campaign.*
@@ -25,7 +27,7 @@ The materials here are provided as-is and come with no warranty or guarantees fo
     3. **Conditions**: 0 conditions selected
     4. **Grant**: Block access
 4. In **Azure Automation**, create a new Runbook and copy the provided ps1 file.
-    1. Paste the KB4 smart group(s) ID into the **$KB4groups** variable
+    1. Paste the KB4 smart group ID into the **$KB4groups** variable
     2. Paste the Entra group into the **$AADgroup** variable
 5. To **schedule** your runbook, you can use the provided schedule in Automation Accounts. However, the most frequent option available is 1 hour, which may be too slow for releasing users once they complete their training. Therefore, you can optionally use an  **Azure Logic App** to execute your runbook on a more frequent schedule, such as every 15 minutes:
     1. Create an Azure Logic App.
