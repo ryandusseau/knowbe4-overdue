@@ -26,7 +26,7 @@ The materials here are provided as-is and come with no warranty or guarantees fo
     2. **Resources**: All cloud apps. Exclude: KnowBe4, optional: any other apps that don't need to be locked out such as VPN or communication tools for reaching Help Desk.
     3. **Conditions**: 0 conditions selected
     4. **Grant**: Block access
-4. In **Azure Automation**:
+4. In **Azure Automation Accounts**:
     1. Create a new Runbook and copy the provided ps1 file.
         1. Paste the KB4 smart group ID into the *$KB4groups* variable
         2. Paste the Entra group into the *$AADgroup* variable
