@@ -15,7 +15,7 @@ This is an automation job to handle adding and removing users from the restricti
 A basic understanding of each of the Requirements is recommended, as well as basic understanding of Powershell.
 
 ## Disclaimer
-The materials here are provided as-is and come with no warranty or guarantees for any environment. before use, you should carefully review all materials to determine whether it is appropriate for your environment. Where necessary, use a test environment and set policies in Report mode to monitor their effect first. Exercise caution when using lockout policies by creating breakglass/exemption conditions and validating the What If conditional access feature.
+The materials here are provided as-is and come with no warranty or guarantees for any environment. Before use, you should carefully review all materials to determine whether it is appropriate for your environment. Where necessary, use a test environment and set policies in Report mode to monitor their effect first. Exercise caution when using lockout policies by creating breakglass/exemption conditions and validating the What If conditional access feature.
 
 ## Set up
 
