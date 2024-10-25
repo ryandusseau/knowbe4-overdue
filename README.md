@@ -35,7 +35,7 @@ The materials here are provided as-is and come with no warranty or guarantees fo
 5. In **Azure Automation Accounts**:
     1. Create a new Runbook and copy the provided ps1 file.
         1. Paste the KB4 smart group ID into the *$KB4groups* variable
-        2. Paste the Entra group into the *$AADgroup* variable
+        2. Paste the Entra group object ID into the *$AADgroup* variable
     2. **Variables**: Create a Variable called *KB4AuthToken*. Type: String. This will be your KB4 API token value. You can locate it in KnowBe4 > Account Settings > API > Reporting Token. You can encrypt the Variable if prompted (recommended).
     3. **Identity**:
         1. Enable the System Assigned Managed Identity. The identity's name will be the Automation Account name.
